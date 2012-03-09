@@ -1,0 +1,61 @@
+#summary One-sentence summary of this page.
+#labels Phase-Implementation
+
+= Introduction =
+
+Download the mogaleaf_simplecolorpicker_1.0.0.jar.
+Add it to your classpath.
+
+Open you Project.gwt.xml file.
+Add this line :
+{{{
+<inherits name="com.mogaleaf.SimpleColorPicker"/>
+}}}
+
+= Details =
+
+To use it you just add to attach it to a widget, a Button for example :
+
+{{{
+  final SimpleColorPicker picker = new SimpleColorPicker();
+    final Button            button = new Button();
+
+    @Override
+    public void onModuleLoad()
+    {
+        picker.addListner(new ColorHandler()
+        {
+
+            @Override
+            public void newColorSelected(String color)
+            {
+                // What you want to do with the color here
+                Window.alert("you choose " + color);
+            }
+        });
+        button.addClickHandler(new ClickHandler()
+        {
+
+            @Override
+            public void onClick(ClickEvent event)
+            {
+                setPopupPositionAndShow(picker, button);
+            }
+        });
+        RootPanel.get().add(new SimplePanel(button));
+    }
+
+    private void setPopupPositionAndShow(final PopupPanel popup, final Widget button)
+    {
+        popup.setPopupPositionAndShow(new PopupPanel.PositionCallback()
+        {
+            @Override
+            public void setPosition(int offsetWidth, int offsetHeight)
+            {
+                int left = button.getAbsoluteLeft() - offsetWidth + button.getOffsetWidth();
+                int top = button.getAbsoluteTop() + button.getOffsetHeight();
+                popup.setPopupPosition(left, top);
+            }
+        });
+    }
+}}}
