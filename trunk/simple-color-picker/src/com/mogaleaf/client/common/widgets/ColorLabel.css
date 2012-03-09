@@ -1,0 +1,10 @@
+.colorLabel {
+	width: 17px;
+	height: 17px;
+	cursor: pointer;
+	border:2px solid rgb(204, 204, 204);
+}
+
+.colorLabel:hover {
+	border-color:transparent;
+}
