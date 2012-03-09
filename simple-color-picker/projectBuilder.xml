@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="PDP.makejar" default="makejar" basedir=".">
+
+	<path id="gwt">
+		<pathelement location="D:/eclipse-jee-indigo/plugins/com.google.gwt.eclipse.sdkbundle_2.4.0.v201201120043-rel-r37/gwt-2.4.0/gwt-user.jar" />
+		<pathelement location="D:/eclipse-jee-indigo/plugins/com.google.gwt.eclipse.sdkbundle_2.4.0.v201201120043-rel-r37/gwt-2.4.0/gwt-dev.jar" />
+		<pathelement location="D:/eclipse-jee-indigo/plugins/com.google.gwt.eclipse.sdkbundle_2.4.0.v201201120043-rel-r37/gwt-2.4.0/validation-api-1.0.0.GA-sources.jar.jar" />
+		<pathelement location="D:/eclipse-jee-indigo/plugins/com.google.gwt.eclipse.sdkbundle_2.4.0.v201201120043-rel-r37/gwt-2.4.0/validation-api-1.0.0.GA.jar" />
+	</path>
+	
+	<target name="makejar" description="Create a jar" depends="compile,copyjava">
+		<jar jarfile="target/dist/mogaleaf_simplecolorpicker_1.0.0.jar" includes="**/*.class,**/*.java,**/*.gwt.xml **/*.css" basedir="target/build" />
+	</target>
+
+	<target name="copyjava" description="Copy java files">
+		<copy todir="target/build">
+			<fileset dir="src" />
+		</copy>
+	</target>
+
+	<target name="compile" description="Compile java files">
+		<mkdir dir="target/build" />
+		<javac srcdir="src" destdir="target/build" debug="on">
+			<classpath refid="gwt" />
+		</javac>
+	</target>
+
+</project>
