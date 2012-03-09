@@ -1,0 +1,5 @@
+<module>
+	<inherits name='com.google.gwt.user.User' />
+	<public path="public" />
+	<entry-point class='com.promailr.client.EntryPoint' />
+</module>
