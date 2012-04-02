@@ -18,7 +18,7 @@ public class EntryPoint implements com.google.gwt.core.client.EntryPoint
 
     @Override
     public void onModuleLoad()
-    {
+    {/*
         picker.addListner(new ColorHandler()
         {
 
@@ -38,7 +38,7 @@ public class EntryPoint implements com.google.gwt.core.client.EntryPoint
                 setPopupPositionAndShow(picker, button);
             }
         });
-        RootPanel.get().add(new SimplePanel(button));
+        RootPanel.get().add(new SimplePanel(button));*/
     }
 
     private void setPopupPositionAndShow(final PopupPanel popup, final Widget button)
