@@ -9,7 +9,7 @@
 	</path>
 	
 	<target name="makejar" description="Create a jar" depends="compile,copyjava">
-		<jar jarfile="target/dist/mogaleaf_simplecolorpicker_1.0.0.jar" includes="**/*.class,**/*.java,**/*.gwt.xml **/*.css" basedir="target/build" />
+		<jar jarfile="target/dist/mogaleaf_simplecolorpicker_1.0.1.jar" includes="**/*.class,**/*.java,**/*.gwt.xml **/*.css" basedir="target/build" />
 	</target>
 
 	<target name="copyjava" description="Copy java files">

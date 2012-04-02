@@ -29,6 +29,7 @@ public class SimpleColorPicker extends PopupPanel implements ClickHandler
     interface MyCssResource extends CssResource
     {
         String popup();
+        String popup_Glass();
     }
 
     public SimpleColorPicker()
@@ -40,6 +41,8 @@ public class SimpleColorPicker extends PopupPanel implements ClickHandler
         this.setModal(true);
         this.addDomHandler(this, ClickEvent.getType());
         setStyleName(MyResources.INSTANCE.css().popup());
+        setGlassEnabled(true);
+        setGlassStyleName(MyResources.INSTANCE.css().popup_Glass());
         setWidget(picker);
     }
 
